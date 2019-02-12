@@ -11,6 +11,7 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
+    set_author
   end
 
   # GET /authors/new
@@ -20,6 +21,7 @@ class AuthorsController < ApplicationController
 
   # GET /authors/1/edit
   def edit
+    set_author
   end
 
   # POST /authors
@@ -41,6 +43,8 @@ class AuthorsController < ApplicationController
   # PATCH/PUT /authors/1
   # PATCH/PUT /authors/1.json
   def update
+    set_author
+
     respond_to do |format|
       if @author.update(author_params)
         format.html { redirect_to @author, notice: 'Author was successfully updated.' }
@@ -55,6 +59,8 @@ class AuthorsController < ApplicationController
   # DELETE /authors/1
   # DELETE /authors/1.json
   def destroy
+    set_author
+
     @author.destroy
     respond_to do |format|
       format.html { redirect_to authors_url, notice: 'Author was successfully destroyed.' }
