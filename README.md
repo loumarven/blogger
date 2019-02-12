@@ -3,4 +3,4 @@ My solution to the [Web Development 101 Ruby on Rails project](https://www.theod
 Visit [this link](https://immense-headland-49798.herokuapp.com/) to view the app.
   
 Limitations:
-* Extras secion I6 for implementation
+* Extras section I6 for implementation
