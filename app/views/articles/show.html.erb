@@ -3,6 +3,7 @@
   <p><%= image_tag @article.image.url(:medium) %></p>
 <% end %>
 <p>Written by: <%= @article.author %></p>
+<p><%= @article.view_count %> views</p>
 <br>
 <p><%= @article.body %></p>
 <p>
