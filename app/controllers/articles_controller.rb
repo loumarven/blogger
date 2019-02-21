@@ -4,7 +4,13 @@ class ArticlesController < ApplicationController
   before_action :require_login, except: [:index, :show]
 
   def index
-    @articles = Article.all.order(created_at: :desc)
+    if params[:top_3]
+      @articles = Article.all.order(view_count: :desc).limit(3)
+      @title = "Top 3 Most Viewed Articles"
+    else
+      @articles = Article.all.order(created_at: :desc)
+      @title = "All Articles"
+    end
   end
 
   def show
